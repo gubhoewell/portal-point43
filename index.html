@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Point 43 — Central de Sistemas</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .logo { font-size: 13px; letter-spacing: 4px; color: #555; text-transform: uppercase; margin-bottom: 6px; }
+  h1 { font-size: 26px; font-weight: 700; color: #f0f0f0; margin-bottom: 2.5rem; text-align: center; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 860px;
+  }
+  .card {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    padding: 28px 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color .2s, transform .15s;
+    cursor: pointer;
+  }
+  .card:hover { border-color: #c9a84c; transform: translateY(-2px); }
+  .card-icon { font-size: 28px; }
+  .card-titulo { font-size: 17px; font-weight: 700; color: #f0f0f0; }
+  .card-desc { font-size: 13px; color: #666; line-height: 1.5; }
+  .card-tag {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #c9a84c;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 3px 10px;
+    width: fit-content;
+  }
+  .footer { margin-top: 2.5rem; font-size: 12px; color: #333; }
+</style>
+</head>
+<body>
+
+<div class="logo">Point 43</div>
+<h1>Central de Sistemas</h1>
+
+<div class="grid">
+
+  <a class="card" href="https://gubhoewell.github.io/tarefas-point43/" target="_blank">
+    <div class="card-icon">📋</div>
+    <div class="card-titulo">Tarefas</div>
+    <div class="card-desc">Gestão de tarefas do time, rotina diária e cartão ponto.</div>
+    <div class="card-tag">Time todo</div>
+  </a>
+
+  <a class="card" href="https://gubhoewell.github.io/arena-comercial/" target="_blank">
+    <div class="card-icon">🎮</div>
+    <div class="card-titulo">Game Arena</div>
+    <div class="card-desc">Gamificação comercial, FitCoins, ranking e metas do backoffice.</div>
+    <div class="card-tag">Backoffice</div>
+  </a>
+
+  <a class="card" href="https://gubhoewell.github.io/gestao-point43/" target="_blank">
+    <div class="card-icon">📊</div>
+    <div class="card-titulo">Painel de Gestão</div>
+    <div class="card-desc">KPIs semanais, indicadores financeiros e operacionais.</div>
+    <div class="card-tag">Sócios</div>
+  </a>
+
+  <a class="card" href="https://gubhoewell.github.io/poplondrina/" target="_blank">
+    <div class="card-icon">📖</div>
+    <div class="card-titulo">POP Londrina</div>
+    <div class="card-desc">Manual de procedimentos operacionais da unidade.</div>
+    <div class="card-tag">Consulta</div>
+  </a>
+
+</div>
+
+<div class="footer">Point 43 © 2026</div>
+
+</body>
+</html>
