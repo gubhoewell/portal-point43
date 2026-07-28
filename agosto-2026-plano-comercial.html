@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POINT 43 · Plano Comercial Agosto 2026</title>
+<style>
+  :root{
+    --gold:#D4AF37; --gold-soft:#c9a227;
+    --bg:#0a0a0a; --panel:#151515; --panel2:#1c1c1c;
+    --text:#f2f2f2; --muted:#9a9a9a; --border:#2a2a2a;
+    --green:#3ba55d; --green-bg:#0f2415; --green-border:#1f5c33;
+    --red:#e05252; --red-bg:#2a1414; --red-border:#5c1f1f;
+    --amber-bg:#241c05; --amber-border:#4a3a0d;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.5;
+  }
+  .section{ padding:64px 24px; max-width:920px; margin:0 auto; border-bottom:1px solid var(--border); }
+  .section:last-child{ border-bottom:none; }
+  .tag{ display:inline-block; background:var(--panel2); border:1px solid var(--gold); color:var(--gold);
+    font-size:12px; font-weight:700; letter-spacing:1px; padding:4px 12px; border-radius:20px; margin-bottom:16px; text-transform:uppercase; }
+  h1{ font-size:40px; font-weight:800; color:#fff; margin-bottom:8px; }
+  h1 .accent{ color:var(--gold); display:block; }
+  h2{ font-size:28px; font-weight:800; color:#fff; margin-bottom:6px; }
+  .sub{ color:var(--muted); font-size:15px; margin-bottom:28px; }
+  .quote{ background:var(--panel); border-left:4px solid var(--gold); border-radius:6px; padding:20px 24px; margin:24px 0; }
+  .quote p{ font-size:17px; }
+  .quote span{ color:var(--muted); font-size:13px; display:block; margin-top:8px; }
+  .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px; }
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:20px; }
+  .card .num{ width:32px; height:32px; border-radius:50%; background:var(--gold); color:#111; font-weight:800;
+    display:flex; align-items:center; justify-content:center; font-size:14px; margin-bottom:12px; }
+  .card h3{ font-size:15px; color:var(--gold); margin-bottom:4px; }
+  .card .val{ font-size:26px; font-weight:800; color:#fff; margin:6px 0; }
+  .card .desc{ font-size:13px; color:var(--muted); }
+  .card.green{ border-color:var(--green-border); background:var(--green-bg); }
+  .card.red{ border-color:var(--red-border); background:var(--red-bg); }
+  .note{ background:var(--amber-bg); border:1px solid var(--amber-border); border-radius:8px; padding:16px 20px; color:#e8c766; font-size:14px; margin-top:20px; }
+  table{ width:100%; border-collapse:collapse; margin-top:20px; font-size:14px; }
+  th{ text-align:left; background:var(--gold); color:#111; padding:10px 14px; font-size:12px; text-transform:uppercase; }
+  td{ padding:12px 14px; border-bottom:1px solid var(--border); }
+  tr:nth-child(even) td{ background:var(--panel); }
+  .phase{ border-radius:10px; overflow:hidden; border:1px solid var(--border); margin-bottom:20px; }
+  .phase-head{ padding:18px 22px; }
+  .phase-head .p-label{ font-size:12px; opacity:.8; text-transform:uppercase; letter-spacing:1px; }
+  .phase-head .p-title{ font-size:22px; font-weight:800; }
+  .phase-head .p-dates{ font-size:13px; opacity:.85; margin-top:2px; }
+  .phase-body{ background:var(--panel); padding:20px 22px; }
+  .phase-body li{ list-style:none; padding-left:20px; position:relative; margin-bottom:10px; font-size:14px; color:#ddd; }
+  .phase-body li:before{ content:"●"; position:absolute; left:0; font-size:8px; top:6px; }
+  .phase1{ background:linear-gradient(135deg,#1d3a5f,#254a75); }
+  .phase2{ background:linear-gradient(135deg,#7a5c00,#a37d05); }
+  .phase3{ background:linear-gradient(135deg,#2d5a3a,#387349); }
+  .quota-box{ margin-top:14px; display:inline-block; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.2); border-radius:6px; padding:8px 16px; font-size:13px; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+  @media(max-width:600px){ .grid2{grid-template-columns:1fr;} h1{font-size:30px;} }
+  .person{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:20px; }
+  .person h3{ color:var(--gold); font-size:18px; margin-bottom:2px; }
+  .person .role{ font-size:12px; color:var(--muted); margin-bottom:14px; }
+  .person li{ list-style:none; font-size:13px; color:#ddd; margin-bottom:8px; padding-left:0; }
+  .person li b{ color:var(--gold); }
+  .alert-box{ background:var(--red-bg); border:1px solid var(--red-border); border-radius:10px; padding:22px; margin-top:20px; }
+  .alert-box h3{ color:var(--red); font-size:16px; margin-bottom:8px; }
+  .footer{ text-align:center; padding:60px 24px; }
+  .footer h2{ font-size:32px; }
+  .footer .gold{ color:var(--gold); }
+  .confidential{ color:var(--gold); font-size:12px; letter-spacing:1px; }
+  .barwrap{ margin-top:24px; }
+  .bar-row{ display:flex; align-items:center; gap:12px; margin-bottom:10px; font-size:13px; }
+  .bar-label{ width:80px; color:var(--muted); }
+  .bar-track{ flex:1; background:var(--panel2); border-radius:4px; height:22px; position:relative; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:4px; }
+  .bar-val{ width:90px; text-align:right; color:#fff; font-weight:700; }
+</style>
+</head>
+<body>
+
+<div class="section" style="padding-top:90px; padding-bottom:90px;">
+  <span class="tag">Apresentação Interna — Time Comercial</span>
+  <h1>ARQUITETURA COMERCIAL<span class="accent">&amp; PLANO DE AGOSTO</span></h1>
+  <p class="sub">Sistema de Metas · Dia dos Pais · Torneio OPEN · Agosto 2026</p>
+  <div class="cards">
+    <div class="card"><div class="val">R$ 93k</div><div class="desc">Cota do time no mês</div></div>
+    <div class="card"><div class="val">2 eventos</div><div class="desc">Dia dos Pais + Torneio OPEN</div></div>
+    <div class="card"><div class="val">3 fases</div><div class="desc">Plano de agosto 2026</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="tag">Contexto</span>
+  <h2>Por que agosto precisa ser diferente</h2>
+  <div class="quote">
+    <p>Julho fechou no vermelho. Agosto tem dois eventos fortes a favor da gente — não podemos deixar passar batido.</p>
+    <span>— Gustavo Hoewell, CEO Point 43</span>
+  </div>
+  <div class="cards">
+    <div class="card red">
+      <h3>Resultado de julho</h3>
+      <div class="val">−R$ 5.800</div>
+      <div class="desc">Faturamento ~R$70k vs. custo de R$75.801</div>
+    </div>
+    <div class="card">
+      <h3>Custo fixo mensal</h3>
+      <div class="val">R$ 75.801</div>
+      <div class="desc">Pra sair do zero a zero</div>
+    </div>
+    <div class="card green">
+      <h3>Cota do time (agosto)</h3>
+      <div class="val">R$ 93.000</div>
+      <div class="desc">É o que garante sobra real, não só empate</div>
+    </div>
+  </div>
+  <p class="note">⚠️ Com Wellhub garantindo ~R$16k fixo/mês, o time precisa fechar no mínimo ~R$60k orgânico só pra empatar o mês. Bater a cota de R$93k é o que separa "sobreviver" de "crescer".</p>
+</div>
+
+<div class="section">
+  <span class="tag">Visão Geral</span>
+  <h2>5 pilares do sistema — sem mudança</h2>
+  <p class="sub">As mesmas regras de sempre. Quanto mais metas batidas, maior o ganho.</p>
+  <div class="cards">
+    <div class="card"><div class="num">1</div><h3>Cota Diária</h3><div class="val">R$ 3.100/dia</div><div class="desc">2% vendas + 1% renovações no dia</div></div>
+    <div class="card"><div class="num">2</div><h3>Gatilho Diário</h3><div class="val">4 planos/dia</div><div class="desc">+R$10 por plano vendido</div></div>
+    <div class="card"><div class="num">3</div><h3>Cota Individual</h3><div class="val">personalizada</div><div class="desc">Bônus R$500 ao bater a cota</div></div>
+    <div class="card"><div class="num">4</div><h3>Cota do Mês</h3><div class="val">R$ 93k/time</div><div class="desc">Comissão 1,5% ou 2,5%</div></div>
+    <div class="card"><div class="num">5</div><h3>Meta Superação</h3><div class="val">R$ 128k/time</div><div class="desc">5% do excedente dividido pra todos</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="tag">Cota Individual</span>
+  <h2>Cada uma tem a sua cota — por perfil</h2>
+  <p class="sub">Valores personalizados por carga horária e modalidade. Mantidos de julho pra agosto.</p>
+  <table>
+    <tr><th>Vendedora</th><th>Modalidade</th><th>Cota mensal</th><th>Bônus ao bater</th></tr>
+    <tr><td>🌟 Emilly</td><td>Home Office · 8h/dia</td><td>R$ 35.000</td><td>R$ 500</td></tr>
+    <tr><td>⚡ Julia</td><td>Híbrido · 8h/dia</td><td>R$ 28.000</td><td>R$ 500</td></tr>
+    <tr><td>🔥 Luana</td><td>Presencial · 6h/dia</td><td>R$ 23.000</td><td>R$ 500</td></tr>
+  </table>
+  <p class="sub" style="margin-top:20px;">Potencial batendo exatamente a própria cota + time batendo R$93k + meta de superação:</p>
+  <table>
+    <tr><th>Vendedora</th><th>Comissão (2,5%)</th><th>Bônus cota</th><th>Gatilho 4 planos*</th><th>Superação**</th><th>Total</th></tr>
+    <tr><td>Emilly</td><td>R$ 875</td><td>R$ 500</td><td>R$ 880</td><td>R$ 292</td><td><b>R$ 2.547</b></td></tr>
+    <tr><td>Julia</td><td>R$ 700</td><td>R$ 500</td><td>R$ 880</td><td>R$ 292</td><td><b>R$ 2.372</b></td></tr>
+    <tr><td>Luana</td><td>R$ 575</td><td>R$ 500</td><td>R$ 880</td><td>R$ 292</td><td><b>R$ 2.247</b></td></tr>
+  </table>
+  <p class="sub">* 22 dias ativando o gatilho (mínimo 4 planos/dia) · ** se o time bater R$128k</p>
+</div>
+
+<div class="section">
+  <span class="tag">Plano Agosto</span>
+  <h2>Agosto em 3 fases</h2>
+  <p class="sub">Intensidade crescente — Dia dos Pais e Torneio OPEN andam juntos, sem respiro entre eles</p>
+
+  <div class="phase">
+    <div class="phase-head phase1">
+      <div class="p-label">Fase 1 · Aquecimento</div>
+      <div class="p-title">Rumo ao Dia dos Pais</div>
+      <div class="p-dates">01 a 08 de agosto</div>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li>30 abordagens ativas/dia por vendedora — WhatsApp individual personalizado</li>
+        <li>10 pedidos de indicação/dia por vendedora</li>
+        <li>Enche o funil pensando no presente do Dia dos Pais</li>
+        <li>Prepara leads quentes pro pico dos dias 09 a 16</li>
+      </ul>
+      <div class="quota-box">Cota parcial: R$ 20k orgânico</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head phase2">
+      <div class="p-label">Fase 2 · Pico Duplo</div>
+      <div class="p-title">Dia dos Pais + Torneio OPEN</div>
+      <div class="p-dates">09 a 16 de agosto</div>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li>09/08 (dom) — Dia dos Pais: campanha de presentear ativa</li>
+        <li>14 a 16/08 — Torneio OPEN Point 43 de Beach Tennis</li>
+        <li>Fechar todos os leads aquecidos da Fase 1 nesses 2 dias mais importantes do mês</li>
+        <li>Torneio traz público de fora — visitantes e acompanhantes viram lead na hora</li>
+        <li>Cotas de patrocínio (Master/Ouro/Prata/Bronze) sendo vendidas em paralelo por Gustavo, Mateus e Bene — fica de olho, se aparecer empresa interessada no seu atendimento, encaminha</li>
+      </ul>
+      <div class="quota-box">Cota parcial: +R$ 35k orgânico</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head phase3">
+      <div class="p-label">Fase 3 · Sustentação + Sprint</div>
+      <div class="p-title">Reta final e transição</div>
+      <div class="p-dates">17 a 31 de agosto</div>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li>Converter o pipeline gerado nas fases 1 e 2</li>
+        <li>Sprint final semana de 24 a 31 — urgência real, sem desespero</li>
+        <li>Última semana (previsão): Luana entra de licença — Emilly e Julia assumem a carteira dela</li>
+        <li>Wellhub ~R$16k chegando entre dia 15-19 (não afeta o orgânico do time)</li>
+      </ul>
+      <div class="quota-box">Cota parcial: R$ 38k orgânico</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="tag">Campanha Torneio</span>
+  <h2>Veio assistir o OPEN, ganhou aula experimental</h2>
+  <p class="sub">O torneio traz gente que nunca pisou no Point 43 pra dentro da arena. Sem gancho comercial, esse público entra e sai sem virar lead.</p>
+  <div class="cards">
+    <div class="card"><div class="num">1</div><h3>No local</h3><div class="desc">Time comercial aborda visitantes e acompanhantes durante o torneio — QR code ou lista rápida de interesse</div></div>
+    <div class="card"><div class="num">2</div><h3>Follow-up</h3><div class="desc">Contato via WhatsApp em até 48h após o torneio, oferecendo aula experimental</div></div>
+    <div class="card"><div class="num">3</div><h3>Conversão</h3><div class="desc">Mesma régua de sempre — 30 abordagens/dia inclui esses novos contatos a partir de 17/08</div></div>
+  </div>
+  <p class="note">⚠️ Patrocínio (cotas Master a Bronze, Master com naming rights do evento) é conduzido por Gustavo, Mateus e Bene — fora da cota de vendas de vocês. O foco de vocês no torneio é conversão de público em aluno.</p>
+</div>
+
+<div class="section">
+  <span class="tag">Objetivos Diários</span>
+  <h2>A rotina que bate a cota</h2>
+  <p class="sub">Mesmos objetivos pra todas — cada uma executa no seu turno e canal</p>
+  <div class="cards">
+    <div class="person"><h3>🌟 Emilly</h3><div class="role">Home Office · 8h/dia</div>
+      <li>08h — 30 abordagens ativas (WhatsApp)</li>
+      <li>10h — 10 pedidos de indicação</li>
+      <li>13h — Retomar respostas dos leads</li>
+      <li>16h — Report diário no grupo</li>
+    </div>
+    <div class="person"><h3>⚡ Julia</h3><div class="role">Home 11-13h + Presencial 16-22h</div>
+      <li>11h — 30 abordagens ativas (WhatsApp)</li>
+      <li>12h — 10 pedidos de indicação</li>
+      <li>16h — Abordagem presencial na academia</li>
+      <li>21h — Report diário no grupo</li>
+    </div>
+    <div class="person"><h3>🔥 Luana</h3><div class="role">Presencial 13h30-19h30 · até a última semana</div>
+      <li>13h30 — 30 abordagens ativas</li>
+      <li>15h — 10 pedidos de indicação</li>
+      <li>17h — Retomar respostas dos leads</li>
+      <li>19h — Report diário no grupo</li>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="tag">Transição</span>
+  <h2>Última semana: cobertura da Luana</h2>
+  <div class="alert-box">
+    <h3>⚠️ Previsão de licença maternidade — última semana de agosto</h3>
+    <p style="font-size:14px; color:#ddd;">A partir dessa semana, a carteira de clientes e leads da Luana passa pra Emilly e Julia. A cota individual dela nesse período é ajustada proporcionalmente aos dias trabalhados — o que importa é o time seguir batendo os R$93k juntos. Mais detalhes e data exata serão comunicados assim que confirmados.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="sub">Arquitetura definida. Plano montado.</p>
+  <h2>AGORA É HORA DE <span class="gold">EXECUTAR.</span></h2>
+  <p class="sub">Metas claras. Regras simples. Recompensa real.</p>
+  <br>
+  <p class="confidential">POINT 43 BEACH TENNIS · point43.com.br · CONFIDENCIAL</p>
+</div>
+
+</body>
+</html>
