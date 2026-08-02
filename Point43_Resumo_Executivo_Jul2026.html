@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Point 43 — Resumo Executivo Jul/2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: #1a1a1a;
+    background: #fff;
+    padding: 18mm 18mm 14mm 18mm;
+  }
+
+  /* HEADER */
+  .page-title { font-size: 26px; font-weight: 700; line-height: 1.1; }
+  .page-sub   { font-size: 10px; color: #888; margin-top: 3px; }
+  .divider    { height: 3px; background: #F5C518; margin: 8px 0 10px; }
+
+  /* LAYOUT */
+  .row   { display: flex; gap: 10px; margin-bottom: 10px; }
+  .col   { flex: 1; }
+
+  /* SECTION HEADER */
+  .sec-hdr {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 8.5px;
+    font-weight: 700;
+    padding: 4px 6px;
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
+  }
+
+  /* KPI GRID */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #eee;
+    border-top: none;
+  }
+  .kpi-cell {
+    padding: 5px 7px;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+  }
+  .kpi-cell:nth-child(even) { border-right: none; }
+  .kpi-label { font-size: 7.5px; color: #888; }
+  .kpi-val   { font-size: 14px; font-weight: 700; line-height: 1.2; }
+  .red  { color: #C62828; }
+  .blue { color: #1565C0; }
+  .green{ color: #2E7D32; }
+  .black{ color: #1a1a1a; }
+  .gray { color: #666; }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8px;
+  }
+  thead tr { background: #f5f5f5; }
+  th { padding: 3px 5px; text-align: left; font-weight: 700; font-size: 7.5px; }
+  td { padding: 3px 5px; border-bottom: 1px solid #eee; }
+  tr:last-child td { border-bottom: none; }
+  .highlight-row td { background: #E3F2FD; }
+  .total-row td { background: #eee; font-weight: 700; }
+
+  /* ALERTA */
+  .alert-box {
+    background: #FFF8E1;
+    border-left: 3px solid #F5C518;
+    padding: 4px 7px;
+    font-size: 7.5px;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 7px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-right: 3px;
+  }
+  .badge-red   { background:#FFEBEE; color:#C62828; }
+  .badge-green { background:#E8F5E9; color:#2E7D32; }
+  .badge-blue  { background:#E3F2FD; color:#1565C0; }
+  .badge-gray  { background:#F5F5F5; color:#555; }
+
+  /* NOTA */
+  .nota { font-size: 7px; color: #aaa; font-style: italic; padding: 3px 0 0 0; }
+
+  /* ACAO BLOCOS */
+  .acao-bloco { margin-bottom: 6px; }
+  .acao-hdr {
+    font-size: 7.5px;
+    font-weight: 700;
+    padding: 3px 6px;
+    background: #f5f5f5;
+  }
+  .acao-hdr.red-border  { border-left: 3px solid #C62828; color: #C62828; }
+  .acao-hdr.blue-border { border-left: 3px solid #1565C0; color: #1565C0; }
+  .acao-hdr.green-border{ border-left: 3px solid #2E7D32; color: #2E7D32; }
+  .acao-item { font-size: 7.5px; padding: 2px 6px 2px 14px; border-left: 3px solid #eee; line-height: 1.4; }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 8px;
+    border-top: 1px solid #ccc;
+    padding-top: 4px;
+    font-size: 6.5px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  /* PRINT */
+  @media print {
+    body { padding: 12mm 15mm 10mm 15mm; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-title">Point 43 — Resumo Executivo</div>
+<div class="page-sub">Reunião de Sócios &nbsp;|&nbsp; 20 de julho de 2026 &nbsp;|&nbsp; Diagnóstico Financeiro e Operacional Jan–Jul/2026 &nbsp;|&nbsp; <b>Fechamento real julho: 02/08/2026</b></div>
+<div class="divider"></div>
+
+<!-- DECISÕES DA REUNIÃO -->
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr">DECISÕES DA REUNIÃO 27/07/2026</div>
+  <div style="margin-top:4px;">
+    <table style="font-size:9px;">
+      <thead><tr><th>Item</th><th>Status</th><th>Detalhe</th></tr></thead>
+      <tbody>
+        <tr><td>Reajuste +10% base ativa</td><td><span class="badge badge-green">✅ Comunicado enviado</span></td><td>Execução: 31/07 — Luana atualiza contratos + limpam contratos antigos com valores menores</td></tr>
+        <tr><td>Contratos — auditoria 31/07</td><td><span class="badge badge-gray">🔄 Pendente</span></td><td>Verificar template atualizado. Excluir contratos sem aluno ativo para eliminar versões antigas com valores menores</td></tr>
+        <tr><td>Reinauguração</td><td><span class="badge badge-gray">🔄 Sem data</span></td><td>Mateus conduzindo — pendente definição de data</td></tr>
+        <tr><td>Meta comercial — reunião terça 13h</td><td><span class="badge badge-green">✅ Em execução</span></td><td>Toda terça 13h no Point 43 — Gustavo, Mateus e Bene</td></tr>
+        <tr><td>Custo julho (Tecnofit)</td><td><span class="badge badge-green">✅ Validado</span></td><td>R$ 75.801 total líquido (inclui lançamentos até 29/07). Aluguel R$25k pago integralmente</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- LINHA 1: SITUACAO ATUAL + RESULTADO MENSAL -->
+<div class="row">
+  <!-- Situacao Atual -->
+  <div class="col">
+    <div class="sec-hdr">FECHAMENTO REAL — JULHO/2026 ✅</div>
+    <div class="kpi-grid">
+      <div class="kpi-cell">
+        <div class="kpi-label">Alunos ativos (31/07)</div>
+        <div class="kpi-val black">238</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label">Receita julho (real)</div>
+        <div class="kpi-val green">R$ 75.367</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label">Cancelamentos reais julho</div>
+        <div class="kpi-val red">34 alunos</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label">Custo julho (pago) <span style="font-size:7px;color:#888;">¹</span></div>
+        <div class="kpi-val black">R$ 78.599</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label">Ticket médio</div>
+        <div class="kpi-val blue">R$ 188</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-label">Resultado julho (real)</div>
+        <div class="kpi-val red">−R$ 3.232</div>
+      </div>
+      <div class="kpi-cell" style="border-bottom:none;">
+        <div class="kpi-label">Bloqueados</div>
+        <div class="kpi-val red">38</div>
+      </div>
+      <div class="kpi-cell" style="border-bottom:none;">
+        <div class="kpi-label">Em licença</div>
+        <div class="kpi-val gray">12</div>
+      </div>
+    </div>
+    <div class="alert-box">
+      Mensalistas: <b>R$ 59.912</b> · Wellhub/TotalPass: <b>R$ 15.455</b> · Total recebido: <b>R$ 75.367</b> · Custo pago: <b>R$ 78.599</b> · Resultado real: <b>−R$ 3.232</b> — melhor que a projeção de −R$ 5.800.
+    </div>
+    <div style="margin-top:6px; padding:5px 7px; background:#fffde7; border-left:3px solid #f9a825; font-size:9px; color:#555; line-height:1.5;">
+      <b>¹ Custo pago = vl_pago no Tecnofit.</b> O campo vl_total (R$131k) está inflado pelo acúmulo de parcelas de pró-labore diferido dos sócios — não usar para análise de resultado. Cancelados: 70 no relatório, 35 com * (Wellhub/TotalPass — desconsiderar) = <b>34 cancelamentos reais</b> (1 contrato interno POINT43 excluído).
+    </div>
+  </div>
+
+  <!-- Resultado Mensal -->
+  <div class="col">
+    <div class="sec-hdr">HISTÓRICO + JULHO EM CURSO</div>
+    <table>
+      <thead>
+        <tr><th>Mês</th><th>Receita</th><th>Custo</th><th>Resultado</th><th>Alunos</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Janeiro</td><td>R$ 63.715</td><td>R$ 67.549</td><td class="red">−R$ 3.834</td><td>250</td></tr>
+        <tr><td>Fevereiro</td><td>R$ 72.336</td><td>R$ 55.390*</td><td class="gray">−R$ 4.000*</td><td>264</td></tr>
+        <tr><td>Março</td><td>R$ 82.290</td><td>R$ 56.595*</td><td class="gray">−R$ 4.000*</td><td>281</td></tr>
+        <tr><td>Abril</td><td>R$ 81.640</td><td>R$ 62.069*</td><td class="gray">−R$ 4.000*</td><td>273</td></tr>
+        <tr><td>Maio</td><td>R$ 79.664</td><td>R$ 77.820</td><td class="gray">+R$ 1.844</td><td>259</td></tr>
+        <tr><td>Junho</td><td>R$ 79.805</td><td>R$ 84.154</td><td class="red">−R$ 4.349</td><td>238</td></tr>
+        <tr style="background:#E8F5E9;font-weight:700;"><td>Julho (fechado ✅)</td><td>R$ 75.367</td><td>R$ 78.599</td><td class="red">−R$ 3.232</td><td>238</td></tr>
+      </tbody>
+    </table>
+    <div class="nota">* Meses com pró-labore diferido. Real normalizado: ~−R$ 4.000/mês em todos os meses</div>
+
+    <div style="margin-top:6px;">
+      <div class="sec-hdr">JULHO — FATURAMENTO vs COTA</div>
+      <table>
+        <tbody>
+          <tr><td>Mensalistas recebido (mês fechado)</td><td><b>R$ 59.912</b></td><td><span class="badge badge-green">✓ fechado</span></td></tr>
+          <tr><td>Wellhub/TotalPass (3 parcelas)</td><td>R$ 15.455</td><td><span class="badge badge-green">✓ recebido</span></td></tr>
+          <tr style="background:#E8F5E9;font-weight:700;"><td>Receita real julho</td><td>R$ 75.367</td><td><span class="badge badge-green">melhor que projeção R$70k</span></td></tr>
+          <tr><td>Custo real (vl_pago)</td><td>R$ 78.599</td><td></td></tr>
+          <tr style="background:#f5f5f5;font-weight:700;"><td>Resultado real</td><td class="red">−R$ 3.232</td><td><span class="badge badge-green">melhor que proj. −R$5.800</span></td></tr>
+          <tr><td>Cancelamentos reais julho</td><td>34 alunos</td><td><span class="badge badge-gray">excl. Wellhub/TotalPass</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- LINHA 2: CUSTOS + BREAKEVEN + LTV -->
+<div class="row">
+  <!-- Estrutura de Custos -->
+  <div class="col">
+    <div class="sec-hdr">ESTRUTURA DE CUSTOS (NORMALIZADO)</div>
+    <table>
+      <thead><tr><th>Categoria</th><th>Mensal</th></tr></thead>
+      <tbody>
+        <tr><td>Aluguel (V2 Management)</td><td>R$ 25.000</td></tr>
+        <tr><td>Pró-labore sócios (Gustavo + Mateus + Bene)</td><td>R$ 17.000</td></tr>
+        <tr><td>Folha funcionários (backoffice)</td><td>~R$ 7.600</td></tr>
+        <tr><td>Professores (variável por visita)</td><td>~R$ 14.500</td></tr>
+        <tr><td>Manutenção quadras + operacional</td><td>~R$ 4.500</td></tr>
+        <tr><td>Outros fixos (sistema, tarifas, etc.)</td><td>~R$ 13.190</td></tr>
+        <tr class="total-row"><td>TOTAL NORMALIZADO</td><td>R$ 81.790</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Breakeven + LTV -->
+  <div class="col">
+    <div class="sec-hdr">BREAKEVEN E PROJEÇÃO</div>
+    <table>
+      <thead><tr><th>Cenário</th><th>Alunos</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>Hoje (ticket médio R$ 213)</td><td>236</td><td class="red">−R$ 7.993/mês</td></tr>
+        <tr><td>Pós-reinauguração (+30)</td><td>266</td><td class="red">~−R$ 488/mês</td></tr>
+        <tr class="highlight-row"><td>Breakeven sem NF</td><td>298</td><td class="blue">Equilíbrio</td></tr>
+        <tr class="highlight-row"><td>Breakeven com NF</td><td>345</td><td class="blue">Equilíbrio</td></tr>
+        <tr><td>Meta Jul/28</td><td>385</td><td class="green">+R$ 38.194/mês</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:8px;">
+      <div class="sec-hdr">LTV E CHURN</div>
+      <table>
+        <tbody>
+          <tr><td>LTV aluno novo (R$ 298/mês)*</td><td class="gray"><b>~R$ 1.638</b></td></tr>
+          <tr><td>LTV base ativa (R$ 213/mês)</td><td>~R$ 1.086</td></tr>
+          <tr><td>Churn mensal estrutural</td><td class="red">~15–16%</td></tr>
+          <tr><td>Permanência média por cliente</td><td>~6,5 meses</td></tr>
+          <tr><td>Custo variável por aluno</td><td>R$ 46/mês</td></tr>
+          <tr><td>Wellhub — contribuição líquida</td><td>R$ 163/aluno</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- LINHA 3: TRAJETORIA + ACOES -->
+<div class="row">
+  <!-- Trajetoria -->
+  <div class="col">
+    <div class="sec-hdr">TRAJETÓRIA 2 ANOS (Jul/26 – Jul/28)</div>
+    <table>
+      <thead><tr><th>Marco</th><th>Data</th><th>Alunos</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>Reajuste 10% base ativa</td><td>Ago/26</td><td>238</td><td class="green">+R$ 2.004</td></tr>
+        <tr><td>Reinauguração (+30 alunos)</td><td>Out/26</td><td>253</td><td class="green">+R$ 5.719</td></tr>
+        <tr><td>Dívida quitada</td><td>Mar/27</td><td>293</td><td class="green">+R$ 15.594</td></tr>
+        <tr><td>Margem 15%</td><td>Ago/27</td><td>330</td><td class="green">+R$ 23.469</td></tr>
+        <tr><td>Renovação contrato / meta</td><td>Jul/28</td><td>385</td><td class="green">+R$ 38.194</td></tr>
+      </tbody>
+    </table>
+    <div class="nota">Capital de giro necessário: ~R$ 11.719 em julho/26 + R$ 4.349 junho = R$ 16.068 acumulado. Reajuste agosto é a alavanca mais rápida para estancar o sangramento.</div>
+  </div>
+
+  <!-- Plano de Acao -->
+  <div class="col">
+    <div class="sec-hdr">PLANO DE AÇÃO PRIORITÁRIO</div>
+
+    <div class="acao-bloco" style="margin-top:4px;">
+      <div class="acao-hdr red-border">FAZER DINHEIRO — ÚLTIMOS 4 DIAS (28–31/07)</div>
+      <div class="acao-item">• <b>Reconquista cancelados:</b> Gustavo (1–40) + Mateus (40–80) + Bene em andamento desde 21/07 — finalizar esta semana</div>
+      <div class="acao-item">• <b>38 bloqueados:</b> acionar para regularização antes do reajuste (+4 vs semana passada)</div>
+      <div class="acao-item">• <b>Plano semestral antecipado:</b> oferta para alunos ativos — pagar à vista antes do reajuste</div>
+    </div>
+
+    <div class="acao-bloco">
+      <div class="acao-hdr red-border">AGOSTO — EXECUÇÃO IMEDIATA</div>
+      <div class="acao-item">• <b>31/07 — Reajuste + contratos:</b> Luana atualiza contratos base ativa (+10%) e limpam contratos antigos sem aluno ativo</div>
+      <div class="acao-item">• <b>31/07 — Template de contrato:</b> verificar versão vigente; excluir versões antigas com valores menores do sistema</div>
+      <div class="acao-item">• <b>Novos alunos:</b> nova tabela vigente a partir de 28/07 ✅ — Light R$229,90 · Experience R$299,90 · Black R$369,90 · Infinity R$429,90</div>
+      <div class="acao-item">• <b>Reinauguração:</b> Mateus conduzindo — <span style="color:#C62828;font-weight:700;">ainda sem data ⚠️</span></div>
+    </div>
+
+    <div class="acao-bloco">
+      <div class="acao-hdr green-border">BENE — FINANCEIRO AGOSTO</div>
+      <div class="acao-item">• Conciliação bancária mensal a partir de agosto (extrato dia 5, relatório dia 10)</div>
+      <div class="acao-item">• Pró-labore residual em aberto: R$ 9.059 (Gustavo + Mateus + Bene) — quitação em agosto</div>
+      <div class="acao-item">• Gap julho ~−R$ 5.800 — custos de fim de mês (Quadreiro, Extra fds, Comissão vendas) lançados 27–29/07. Reajuste agosto cobre e reverte</div>
+    </div>
+    <div style="margin-top:8px;">
+      <div class="acao-hdr" style="border-left: 3px solid #e65100; background:#fff8f5;">⚠️ ALERTA SAZONAL — EL NIÑO SET–DEZ/2026</div>
+      <div class="acao-item">• Previsão de chuvas acima da média em Londrina de setembro a dezembro (SIMEPAR/INMET)</div>
+      <div class="acao-item">• Quadras descobertas: aulas canceladas geram <b>créditos de 30 dias</b> — risco de churn se aluno não reagendar</div>
+      <div class="acao-item">• <b>Prioridade:</b> protocolo de comunicação via PointBot em até 5 min após cancelamento + link de reagendamento imediato</div>
+      <div class="acao-item">• <b>Estratégia:</b> set–dez = período defensivo — foco em retenção, não em aquisição. Não ampliar verba de tráfego pago nesse período.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAXA DE OCUPAÇÃO -->
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr">TAXA DE OCUPAÇÃO — JUL/2026 · PARA O MATEUS (COO)</div>
+  <div class="row" style="margin-bottom:4px;">
+    <div class="col">
+      <table>
+        <thead><tr><th>Faixa horária</th><th>Ocupação</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>07h – 09h50 (manhã)</td><td class="blue">~14–50%</td><td>Capacidade ociosa — oportunidade</td></tr>
+          <tr><td>10h – 17h50 (tarde)</td><td class="blue">~40–70%</td><td>Intermediário — pode crescer</td></tr>
+          <tr class="highlight-row"><td><b>18h – 19h50 (horário nobre)</b></td><td class="red"><b>~90–93%</b></td><td><b>Gargalo — praticamente lotado</b></td></tr>
+          <tr><td>21h – 21h50 (noturno)</td><td class="blue">~50%</td><td>Irregular — algumas turmas vazias</td></tr>
+          <tr class="total-row"><td>Média geral</td><td>65%</td><td>35% de capacidade ainda disponível</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col" style="max-width:220px;">
+      <div style="background:#f9f9f9;border:1px solid #eee;padding:8px 10px;font-size:10px;line-height:1.7;">
+        <div style="font-weight:700;margin-bottom:4px;font-size:9px;">⚡ AÇÕES PARA O MATEUS</div>
+        <div>• <b>21h com 0 alunos</b> em alguns dias → avaliar corte ou consolidação de turmas</div>
+        <div>• <b>Manhã (07h–10h)</b> tem vaga para 30+ novos alunos → direcionar campanha para esse horário</div>
+        <div>• <b>Wellhub no horário nobre</b> ocupa vaga de mensalista (−R$89/vaga/mês) → restringir a partir da reinauguração</div>
+        <div>• <b>Lista de espera 19h–20h</b> → oferecer 18h como alternativa já</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:4px 7px;background:#e8f5e9;border-left:3px solid #2e7d32;font-size:9px;color:#1b5e20;">
+    <b>Conclusão:</b> capacidade para crescer existe — o desafio é direcionar novos alunos para manhã e tarde, não para o horário nobre que já está no limite.
+  </div>
+
+  <div style="margin-top:8px;">
+    <div class="sec-hdr" style="background:#c62828;">INCONSISTÊNCIA DE GRADE — SEM. 12–18/JUL vs 19–25/JUL</div>
+    <div style="font-size:9px;color:#555;padding:4px 0 4px;">Turmas com 3+ alunos na semana passada que <b>não aparecem na grade desta semana</b> no mesmo dia e horário:</div>
+    <table>
+      <thead><tr><th>Dia</th><th>Horário</th><th>Turma</th><th>Alunos sem. passada</th></tr></thead>
+      <tbody>
+        <tr><td>Dom 12</td><td>11h00</td><td>*Bt-M.Azul</td><td class="red"><b>6/6</b></td></tr>
+        <tr><td>Dom 12</td><td>18h00</td><td>Rei/rainha Da Praia</td><td class="red"><b>5/10</b></td></tr>
+        <tr><td>Dom 12</td><td>18h00</td><td>Bt-M.Azul</td><td class="red"><b>4/6</b></td></tr>
+        <tr><td>Dom 12</td><td>18h00</td><td>Bt-M.Verde</td><td class="red"><b>6/6</b></td></tr>
+        <tr><td>Seg 13</td><td>17h00</td><td>Bt-M.Azul</td><td class="red"><b>6/6 + 4/6</b></td></tr>
+        <tr><td>Seg 13</td><td>19h00</td><td>Bt-Branca</td><td class="red"><b>5/6</b></td></tr>
+        <tr><td>Ter 14</td><td>18h00</td><td>Bt-Branca</td><td class="red"><b>6/6</b></td></tr>
+        <tr><td>Ter 14</td><td>19h00</td><td>Bt-Branca</td><td class="red"><b>5/6</b></td></tr>
+        <tr><td>Qua 15</td><td>19h00</td><td>Bt-Branca</td><td class="red"><b>5/6</b></td></tr>
+        <tr><td>Qui 16</td><td>17h00</td><td>*Bt-M.Vermelha</td><td class="red"><b>7/7</b></td></tr>
+        <tr><td>Sex 17</td><td>17h00</td><td>Monte Sua Turma Xt.</td><td class="red"><b>4/4</b></td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:5px;padding:4px 7px;background:#fce4ec;border-left:3px solid #c62828;font-size:9px;color:#7f0000;line-height:1.6;">
+      <b>Impacto:</b> 11 slots com turmas cheias desapareceram da grade — estimativa de 55+ alunos sem aula no horário habitual. Bt-Branca sumiu de 4 dias. Domingo 18h perdeu 3 turmas inteiras.<br>
+      <b>Causa raiz:</b> grade não está sendo salva no formato que funcionou. Aluno não consegue criar rotina → sem rotina, churn aumenta.<br>
+      <b>Decisão para o Mateus:</b> grade fixa por mês, alteração só com comunicado prévio aos alunos.
+    </div>
+  </div>
+</div>
+
+<!-- COMPARATIVO SEMANA A SEMANA -->
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr">COMPARATIVO SEMANAL — 19/07 vs 27/07</div>
+  <table style="margin-top:4px;">
+    <thead><tr><th>Indicador</th><th>19/07</th><th>27/07</th><th>Δ</th><th>Tendência</th></tr></thead>
+    <tbody>
+      <tr><td>Alunos ativos</td><td>236</td><td><b>237</b></td><td class="green">+1</td><td><span class="badge badge-green">▲ estável</span></td></tr>
+      <tr><td>Bloqueados</td><td>34</td><td><b>38</b></td><td class="red">+4</td><td><span class="badge badge-red">▼ atenção</span></td></tr>
+      <tr><td>Cancelamentos mensalistas (mês)</td><td>13</td><td><b>23</b></td><td class="red">+10</td><td><span class="badge badge-red">▼ acelerou</span></td></tr>
+      <tr><td>Churn % mensalistas</td><td>11%</td><td><b>~10%</b></td><td class="green">−1pp</td><td><span class="badge badge-green">▲ leve melhora</span></td></tr>
+      <tr><td>Receita mensalistas recebida</td><td>R$ 40.301</td><td><b>R$ 51.305</b></td><td class="green">+R$ 11.004</td><td><span class="badge badge-green">▲ +27%</span></td></tr>
+      <tr><td>Wellhub recebido</td><td>—</td><td><b>R$ 15.455</b></td><td class="green">+R$ 15.455</td><td><span class="badge badge-green">✓ 3 parcelas</span></td></tr>
+      <tr><td>Custo julho (total líquido)</td><td>R$ 73.881</td><td><b>R$ 75.801</b></td><td class="red">+R$ 1.920</td><td><span class="badge badge-red">▼ +5 contas fim mês</span></td></tr>
+      <tr><td>Resultado projetado</td><td>−R$ 3.810</td><td><b>~−R$ 5.800</b></td><td class="red">−R$ 1.990</td><td><span class="badge badge-red">▼ piorou levemente</span></td></tr>
+    </tbody>
+  </table>
+  <div style="margin-top:5px;padding:4px 7px;background:#e8f5e9;border-left:3px solid #2e7d32;font-size:9px;color:#1b5e20;line-height:1.6;">
+    <b>Leitura:</b> receita mensalistas avançou R$ 11k na semana (+27%). Total recebido de R$ 66.760 com 4 dias ainda por entrar. Resultado julio deve fechar próximo de −R$ 4k — alinhado com a projeção original. Agosto com reajuste +10% + nova tabela para novos alunos é a virada.
+  </div>
+</div>
+
+<!-- GRÁFICO DE PERFORMANCE -->
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr">PERFORMANCE OPERACIONAL — JAN–JUL/2026</div>
+  <canvas id="chart" width="700" height="215" style="width:100%;height:auto;display:block;border:1px solid #eee;"></canvas>
+  <div style="display:flex;gap:16px;margin-top:3px;flex-wrap:wrap;">
+    <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:8px;background:#1565C0;"></span> Receita mensal</span>
+    <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:8px;background:#90CAF9;border:1px dashed #1565C0;"></span> Jul/26 (projeção)</span>
+    <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:#C62828;margin:3px 0;"></span> Custo normalizado R$81.790</span>
+    <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:#E65100;margin:3px 0;"></span> Cota R$93.000</span>
+    <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:#F5C518;margin:3px 0;"></span> Alunos ativos →</span>
+    <span class="nota">Resultado abaixo de cada mês = Receita − Custo normalizado</span>
+  </div>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('chart');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  const months   = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul*'];
+  const revenue  = [63715, 72336, 82290, 81640, 79664, 79805, 70000];
+  const resultado= [-3834, -4000, -4000, -4000, 1844, -4349, -5800];
+  const alunos   = [250, 264, 281, 273, 259, 238, 237];
+
+  const pad = { top: 28, right: 60, bottom: 52, left: 62 };
+  const cw = W - pad.left - pad.right;
+  const ch = H - pad.top - pad.bottom;
+
+  const yMin = 55000, yMax = 100000;
+  function yR(v) { return pad.top + ch - (v - yMin) / (yMax - yMin) * ch; }
+
+  const aMin = 220, aMax = 300;
+  function yA(v) { return pad.top + ch - (v - aMin) / (aMax - aMin) * ch; }
+
+  const slotW = cw / months.length;
+  const barW  = slotW * 0.54;
+  function xLeft(i)   { return pad.left + i * slotW + (slotW - barW) / 2; }
+  function xCenter(i) { return pad.left + i * slotW + slotW / 2; }
+
+  // ── grid ──────────────────────────────────────────────
+  ctx.strokeStyle = '#f0f0f0';
+  ctx.lineWidth = 0.5;
+  for (let v = 60000; v <= 95000; v += 5000) {
+    const y = yR(v);
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(W - pad.right, y); ctx.stroke();
+  }
+
+  // ── custo line ────────────────────────────────────────
+  const yCost = yR(81790);
+  ctx.strokeStyle = '#C62828'; ctx.lineWidth = 1.2; ctx.setLineDash([5, 3]);
+  ctx.beginPath(); ctx.moveTo(pad.left, yCost); ctx.lineTo(W - pad.right, yCost); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#C62828'; ctx.font = 'bold 7px Helvetica'; ctx.textAlign = 'left';
+  ctx.fillText('Custo R$81.8k', W - pad.right + 3, yCost + 3);
+
+  // ── cota line ─────────────────────────────────────────
+  const yCota = yR(93000);
+  ctx.strokeStyle = '#E65100'; ctx.lineWidth = 1.2; ctx.setLineDash([5, 3]);
+  ctx.beginPath(); ctx.moveTo(pad.left, yCota); ctx.lineTo(W - pad.right, yCota); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#E65100'; ctx.font = 'bold 7px Helvetica'; ctx.textAlign = 'left';
+  ctx.fillText('Cota R$93k', W - pad.right + 3, yCota + 3);
+
+  // ── revenue bars ──────────────────────────────────────
+  revenue.forEach((v, i) => {
+    const x = xLeft(i), y = yR(v), h = yR(yMin) - y;
+    const isProj = i === 6;
+    ctx.fillStyle = isProj ? '#BBDEFB' : '#1565C0';
+    ctx.fillRect(x, y, barW, h);
+    if (isProj) {
+      ctx.strokeStyle = '#1565C0'; ctx.lineWidth = 1; ctx.setLineDash([3,2]);
+      ctx.strokeRect(x, y, barW, h); ctx.setLineDash([]);
+    }
+    // label topo da barra
+    ctx.fillStyle = '#1a1a1a'; ctx.font = 'bold 7.5px Helvetica'; ctx.textAlign = 'center';
+    ctx.fillText('R$' + Math.round(v/1000) + 'k', xCenter(i), y - 4);
+  });
+
+  // ── alunos line ───────────────────────────────────────
+  ctx.strokeStyle = '#F5C518'; ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  alunos.forEach((v, i) => {
+    i === 0 ? ctx.moveTo(xCenter(i), yA(v)) : ctx.lineTo(xCenter(i), yA(v));
+  });
+  ctx.stroke();
+
+  // alunos dots + valores
+  alunos.forEach((v, i) => {
+    const x = xCenter(i), y = yA(v);
+    ctx.fillStyle = '#F5C518'; ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI*2); ctx.fill();
+    ctx.strokeStyle = '#7B6000'; ctx.lineWidth = 0.8; ctx.stroke();
+    ctx.fillStyle = '#7B6000'; ctx.font = 'bold 7px Helvetica'; ctx.textAlign = 'center';
+    ctx.fillText(v, x, y - 6);
+  });
+
+  // ── x axis ────────────────────────────────────────────
+  ctx.strokeStyle = '#ccc'; ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(pad.left, yR(yMin)); ctx.lineTo(W - pad.right, yR(yMin)); ctx.stroke();
+
+  months.forEach((m, i) => {
+    const cx = xCenter(i);
+    // mês
+    ctx.fillStyle = '#1a1a1a'; ctx.font = 'bold 8px Helvetica'; ctx.textAlign = 'center';
+    ctx.fillText(m, cx, H - pad.bottom + 11);
+    // resultado
+    const res = resultado[i];
+    ctx.fillStyle = res >= 0 ? '#2E7D32' : '#C62828';
+    ctx.font = '7px Helvetica';
+    ctx.fillText((res >= 0 ? '+' : '') + 'R$' + (res/1000).toFixed(1) + 'k', cx, H - pad.bottom + 22);
+    if (i === 6) {
+      ctx.fillStyle = '#aaa'; ctx.font = '6px Helvetica';
+      ctx.fillText('(proj)', cx, H - pad.bottom + 31);
+    }
+  });
+
+  // ── left y axis ───────────────────────────────────────
+  ctx.strokeStyle = '#ccc'; ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(pad.left, pad.top); ctx.lineTo(pad.left, yR(yMin)); ctx.stroke();
+  ctx.fillStyle = '#888'; ctx.font = '7px Helvetica'; ctx.textAlign = 'right';
+  for (let v = 60000; v <= 95000; v += 5000) {
+    ctx.fillText('R$' + v/1000 + 'k', pad.left - 4, yR(v) + 3);
+  }
+
+  // ── right y axis (alunos) ─────────────────────────────
+  ctx.strokeStyle = '#ccc'; ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(W - pad.right, pad.top); ctx.lineTo(W - pad.right, yR(yMin)); ctx.stroke();
+  ctx.fillStyle = '#7B6000'; ctx.font = '7px Helvetica'; ctx.textAlign = 'left';
+  [230, 250, 270, 290].forEach(v => {
+    ctx.fillText(v, W - pad.right + 4, yA(v) + 3);
+  });
+  ctx.fillStyle = '#7B6000'; ctx.font = 'bold 7px Helvetica';
+  ctx.fillText('Alunos', W - pad.right + 4, pad.top + 8);
+})();
+</script>
+
+<!-- CONTEÚDO DIGITAL -->
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr">CONTEÚDO DIGITAL — INSIGHT DA REUNIÃO</div>
+  <div style="padding:6px 8px;background:#f9f9f9;border:1px solid #eee;font-size:9px;line-height:1.7;margin-top:4px;">
+    <b>855k visualizações nos últimos 30 dias.</b> Estratégia validada: <b>formato novela</b> — conteúdo cronológico, personagens com identidade, narrativa da franquia em construção. Teste inicial: 3 vídeos do cotidiano da arena ultrapassaram 10k views cada — performance superior aos vídeos de treinamento padrão.<br>
+    Próximo passo: produção de conteúdo amanhã (21/07) durante encontro presencial no Parador às 13h30.
+  </div>
+</div>
+
+<!-- TAREFAS PÓS-REUNIÃO -->
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr">TAREFAS EM ABERTO — 20/07/2026 (pendentes)</div>
+  <table style="margin-top:4px;">
+    <thead><tr><th>#</th><th>Responsável</th><th>Tarefa</th><th>Prazo</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Mateus</b></td><td>Confirmar torneio início de agosto + negociar patrocínio (Jamille)</td><td>21/07</td></tr>
+      <tr><td>2</td><td><b>Gustavo</b></td><td>Solicitar 4 placas ao Rafa + negociar pagamento de dívida até 30/07</td><td>21/07</td></tr>
+      <tr><td>3</td><td><b>Gustavo</b></td><td>Convidar Marcela para clínica</td><td>21/07</td></tr>
+      <tr><td>6</td><td><b>Mateus</b></td><td>Listar melhorias estruturais para Daniel (puxar lista no grupo)</td><td>21/07</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr">TAREFAS PÓS-REUNIÃO — 27/07/2026</div>
+  <table style="margin-top:4px;">
+    <thead><tr><th>#</th><th>Responsável</th><th>Tarefa</th><th>Prazo</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Mateus</b></td><td>Mandar mensagem para responsável pela reinauguração e cobrar data</td><td>28/07</td></tr>
+      <tr><td>2</td><td><b>Gustavo</b></td><td>Estudar grade da semana passada e mapear melhorias</td><td>28/07</td></tr>
+      <tr><td>3</td><td><b>Bene</b></td><td>Contatar Kauan — avaliar viabilidade de clínica (R$120/h)</td><td>28/07</td></tr>
+      <tr><td>4</td><td><b>Mateus</b></td><td>Analisar pesquisa de satisfação e ocupação do prof. Ricardo</td><td>28/07</td></tr>
+      <tr><td>5</td><td><b>Gustavo</b></td><td>Finalizar organizar/Agendar aula experimental com a influenciadora</td><td>28/07</td></tr>
+      <tr><td>6</td><td><b>Bene</b></td><td>Verificar com Jaime: licença maternidade Luana + descontos INSS</td><td>28/07</td></tr>
+      <tr><td>7</td><td><b>Gustavo</b></td><td>Levantar investimento mensal em tráfego pago + matrículas geradas (CAC real)</td><td>29/07</td></tr>
+      <tr><td>8</td><td><b>Gustavo</b></td><td>Analisar dados de atendimento e taxa de conversão tráfego pago</td><td>29/07</td></tr>
+      <tr><td>9</td><td><b>Bene</b></td><td>Cadastrar produtos (camisetas) no sistema + coordenar gravação com Jú Hirle para vender as camisetas</td><td>29/07</td></tr>
+      <tr><td>10</td><td><b>Bene</b></td><td>Reuniões individuais com Emilly e Júlia — alinhar conduta e leads</td><td>29/07</td></tr>
+      <tr><td>11</td><td><b>Bene</b></td><td>Comunicar Júlia sobre retorno ao horário padrão</td><td>28/07</td></tr>
+      <tr><td>12</td><td><b>Bene</b></td><td>Organizar reajustes Júlia</td><td>28–29/07</td></tr>
+      <tr><td>13</td><td><b>Grupo</b></td><td>Organizar evento presencial — entrega de certificados e munhequeira</td><td>A definir</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ESTRATÉGIA AGOSTO -->
+<div style="margin-bottom:10px;">
+  <div class="sec-hdr" style="background:#1565C0;">ESTRATÉGIA AGOSTO 2026 — DUAS CAMADAS</div>
+  <div style="padding:5px 0 4px;">
+    <div class="row" style="gap:8px;">
+      <div class="col">
+        <div style="background:#E3F2FD;border-left:3px solid #1565C0;padding:5px 8px;margin-bottom:6px;">
+          <div style="font-size:8px;font-weight:700;color:#1565C0;letter-spacing:0.03em;margin-bottom:3px;">CAMADA 1 — EXECUÇÃO (time responsável)</div>
+          <table style="font-size:8px;">
+            <thead><tr><th>Iniciativa</th><th>Responsável</th><th>Data</th></tr></thead>
+            <tbody>
+              <tr><td><b>Reajuste +10%</b> — contratos base ativa</td><td>Luana / Bene</td><td>31/07 ✅</td></tr>
+              <tr><td><b>Dia da Graduação</b> — avaliação ao vivo + entrega de munhequeira de nível</td><td>Mateus + Raquel</td><td>A definir ago</td></tr>
+              <tr><td><b>Plano anual + BT Experience</b> — anual ganha ingresso na imersão do mês</td><td>Time comercial</td><td>Ago/26</td></tr>
+              <tr><td><b>Torneio OPEN</b> 14–16/08 + <b>Dia dos Pais</b> 09/08</td><td>Mateus + Raquel</td><td>Ago/26</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col">
+        <div style="background:#F3E5F5;border-left:3px solid #7B1FA2;padding:5px 8px;">
+          <div style="font-size:8px;font-weight:700;color:#7B1FA2;letter-spacing:0.03em;margin-bottom:3px;">CAMADA 2 — ESTRATÉGIA EM CONSTRUÇÃO (Gustavo lidera)</div>
+          <table style="font-size:8px;">
+            <thead><tr><th>Iniciativa</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><b>Ecossistema de parcerias</b> — benefício / indicar e ganhar / patrocínio</td><td>Mapeando</td></tr>
+              <tr><td><b>Orçamento de cabeça para baixo</b> — partir da meta, não do custo</td><td>Estruturando</td></tr>
+              <tr><td><b>Separação Canal / Produto / Gestão</b> — clareza de papel por sócio</td><td>Alinhando</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top:4px;font-size:7px;color:#666;font-style:italic;">Time tem ciência mas não é responsável por executar agora.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#FFF8E1;border-left:3px solid #F5C518;padding:5px 8px;font-size:8px;line-height:1.6;margin-top:2px;">
+    <b>Dia da Graduação:</b> alunos selecionados são convidados para avaliação ao vivo de mudança de nível e recebem a munhequeira na frente de todos. Analogia ao sistema de faixas — cria ritual, pertencimento e UGC espontâneo. Raquel documenta para conteúdo. Alta geração de compartilhamento orgânico.<br>
+    <b>Plano anual + BT Experience:</b> quem compra plano anual ganha ingresso para o BT Experience (imersão) do mês — ancoragem de valor no ticket alto, melhora onboarding e retém desde o primeiro dia.<br>
+    <b>Narrativa de agosto:</b> o reajuste não é aumento de preço — é a arena subindo de nível. Experiência maior justifica valor maior.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Point 43 — FOCCOS SERVIÇOS FITNESS LTDA &nbsp;|&nbsp; CNPJ 55.494.064/0001-88 &nbsp;|&nbsp;
+  Atualizado em 02/08/2026 — fechamento real julho &nbsp;|&nbsp; Fonte: Tecnofit (vendas recebidas + contas a pagar vl_pago + cancelados) + Extratos C6 e Santander
+</div>
+
+</body>
+</html>
