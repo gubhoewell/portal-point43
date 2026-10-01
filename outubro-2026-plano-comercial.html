@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POINT 43 · Plano Comercial Outubro 2026</title>
+<style>
+  :root{
+    --gold:#D4AF37; --gold-soft:#c9a227;
+    --bg:#0a0a0a; --panel:#151515; --panel2:#1c1c1c;
+    --text:#f2f2f2; --muted:#9a9a9a; --border:#2a2a2a;
+    --green:#3ba55d; --green-bg:#0f2415; --green-border:#1f5c33;
+    --red:#e05252; --red-bg:#2a1414; --red-border:#5c1f1f;
+    --amber-bg:#241c05; --amber-border:#4a3a0d;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+  .section{ padding:64px 24px; max-width:920px; margin:0 auto; border-bottom:1px solid var(--border); }
+  .section:last-child{ border-bottom:none; }
+  .tag{ display:inline-block; background:var(--panel2); border:1px solid var(--gold); color:var(--gold);
+    font-size:12px; font-weight:700; letter-spacing:1px; padding:4px 12px; border-radius:20px; margin-bottom:16px; text-transform:uppercase; }
+  h1{ font-size:40px; font-weight:800; color:#fff; margin-bottom:8px; }
+  h1 .accent{ color:var(--gold); display:block; }
+  h2{ font-size:28px; font-weight:800; color:#fff; margin-bottom:6px; }
+  h3.subhead{ font-size:16px; color:var(--gold); margin-top:28px; margin-bottom:10px; }
+  .sub{ color:var(--muted); font-size:15px; margin-bottom:28px; }
+  .quote{ background:var(--panel); border-left:4px solid var(--gold); border-radius:6px; padding:20px 24px; margin:24px 0; }
+  .quote p{ font-size:17px; }
+  .quote span{ color:var(--muted); font-size:13px; display:block; margin-top:8px; }
+  .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px; }
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:20px; }
+  .card .num{ width:32px; height:32px; border-radius:50%; background:var(--gold); color:#111; font-weight:800;
+    display:flex; align-items:center; justify-content:center; font-size:14px; margin-bottom:12px; }
+  .card h3{ font-size:15px; color:var(--gold); margin-bottom:4px; }
+  .card .val{ font-size:26px; font-weight:800; color:#fff; margin:6px 0; }
+  .card .desc{ font-size:13px; color:var(--muted); }
+  .card.green{ border-color:var(--green-border); background:var(--green-bg); }
+  .card.red{ border-color:var(--red-border); background:var(--red-bg); }
+  .card.pending{ border-style:dashed; opacity:.75; }
+  .note{ background:var(--amber-bg); border:1px solid var(--amber-border); border-radius:8px; padding:16px 20px; color:#e8c766; font-size:14px; margin-top:20px; }
+  table{ width:100%; border-collapse:collapse; margin-top:20px; font-size:14px; }
+  th{ text-align:left; background:var(--gold); color:#111; padding:10px 14px; font-size:12px; text-transform:uppercase; }
+  td{ padding:12px 14px; border-bottom:1px solid var(--border); }
+  tr:nth-child(even) td{ background:var(--panel); }
+  .phase{ border-radius:10px; overflow:hidden; border:1px solid var(--border); margin-bottom:20px; }
+  .phase-head{ padding:18px 22px; }
+  .phase-head .p-label{ font-size:12px; opacity:.8; text-transform:uppercase; letter-spacing:1px; }
+  .phase-head .p-title{ font-size:22px; font-weight:800; }
+  .phase-head .p-dates{ font-size:13px; opacity:.85; margin-top:2px; }
+  .phase-body{ background:var(--panel); padding:20px 22px; }
+  .phase-body li{ list-style:none; padding-left:20px; position:relative; margin-bottom:10px; font-size:14px; color:#ddd; }
+  .phase-body li:before{ content:"●"; position:absolute; left:0; font-size:8px; top:6px; }
+  .phase1{ background:linear-gradient(135deg,#7c4fd1,#5d35a8); }
+  .phase2{ background:linear-gradient(135deg,#1d3a5f,#254a75); }
+  .phase3{ background:linear-gradient(135deg,#2d5a3a,#387349); }
+  .quota-box{ margin-top:14px; display:inline-block; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.2); border-radius:6px; padding:8px 16px; font-size:13px; }
+  @media(max-width:600px){ h1{font-size:30px;} }
+  .person{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:20px; }
+  .person h3{ color:var(--gold); font-size:18px; margin-bottom:2px; }
+  .person .role{ font-size:12px; color:var(--muted); margin-bottom:14px; }
+  .person li{ list-style:none; font-size:13px; color:#ddd; margin-bottom:8px; padding-left:0; }
+  .person li b{ color:var(--gold); }
+  .footer{ text-align:center; padding:60px 24px; }
+  .footer h2{ font-size:32px; }
+  .footer .gold{ color:var(--gold); }
+  .confidential{ color:var(--gold); font-size:12px; letter-spacing:1px; }
+
+  .calendar{ margin-top:24px; margin-bottom:32px; }
+  .cal-weekdays{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-bottom:6px; }
+  .cal-weekdays span{ text-align:center; font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); }
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
+  .cal-day{ aspect-ratio:1; background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:6px; display:flex; flex-direction:column; justify-content:space-between; min-height:52px; }
+  .cal-day.empty{ background:transparent; border:none; }
+  .cal-num{ font-size:12px; font-weight:700; color:var(--muted); }
+  .cal-tag{ font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; line-height:1.2; padding:2px 4px; border-radius:4px; text-align:center; }
+  .cal-torneio{ background:#7c4fd1; color:#fff; }
+  .cal-crianca{ background:#e0287a; color:#1a0812; }
+  .cal-bt{ background:#00b894; color:#00251a; }
+  .cal-day.cal-torneio{ border-color:#7c4fd1; border-width:2px; }
+  .cal-day.cal-crianca{ border-color:#e0287a; border-width:2px; }
+  .cal-day.cal-bt{ border-color:#00b894; border-width:2px; }
+  .cal-legend{ display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:16px; font-size:12px; color:#ddd; }
+  .cal-legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .cal-dot{ width:10px; height:10px; border-radius:3px; display:inline-block; }
+</style>
+</head>
+<body>
+
+<div class="section" style="padding-top:90px; padding-bottom:90px;">
+  <span class="tag">Apresentação Interna — Time Comercial</span>
+  <h1>ARQUITETURA COMERCIAL<span class="accent">&amp; PLANO DE OUTUBRO</span></h1>
+  <p class="sub">Sistema de Metas · Open Pratyc de Beach Tennis (Gabriel) · Dia das Crianças · BT Experience · Outubro 2026</p>
+  <div class="cards">
+    <div class="card green"><div class="val">Breakeven ✅</div><div class="desc">Setembro fechou +R$364 — primeiro mês positivo desde a virada</div></div>
+    <div class="card red"><div class="val">+13 matrículas</div><div class="desc">Meta líquida do mês — número que decide se outubro também fecha no azul</div></div>
+    <div class="card"><div class="val">3 fases</div><div class="desc">Plano de outubro 2026</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="tag">Debriefing de Setembro</span>
+  <h2>Primeiro mês no azul — agora é manter</h2>
+  <p class="sub">Setembro foi o mês em que a virada começou a aparecer de verdade nos números.</p>
+
+  <div class="cards">
+    <div class="card"><h3>Receita setembro</h3><div class="val">R$ 83.690</div><div class="desc">Inclui Wellhub de agosto (R$19.359), pago em setembro</div></div>
+    <div class="card"><h3>Custo pago setembro</h3><div class="val">R$ 83.326</div><div class="desc">vl_pago Tecnofit — fonte oficial</div></div>
+    <div class="card green"><h3>Resultado real</h3><div class="val">+R$ 364</div><div class="desc">✅ Breakeven atingido — depois de meses no vermelho</div></div>
+  </div>
+
+  <div class="cards" style="margin-top:16px;">
+    <div class="card green"><h3>Cancelamentos</h3><div class="val">32 alunos</div><div class="desc">↓ 43% vs agosto (56) — a rotina de retenção funcionou</div></div>
+    <div class="card green"><h3>Alunos ativos</h3><div class="val">269 → 274</div><div class="desc">+5 no fechamento de setembro; base em 01/10</div></div>
+    <div class="card"><h3>Wellhub de setembro</h3><div class="val">R$ 14.470</div><div class="desc">Cai em outubro, por volta do dia 15</div></div>
+  </div>
+
+  <h3 class="subhead">Vendas por vendedora — setembro (Tecnofit, fonte oficial)</h3>
+  <table>
+    <tr><th>Vendedora</th><th>Total vendido</th><th>Cota de setembro</th><th>Bateu?</th></tr>
+    <tr><td>🌟 Emilly</td><td>R$ 55.150,98</td><td>R$ 48.664,01</td><td>✅ Sim — 3º mês seguido batendo</td></tr>
+    <tr><td>⚡ Julia</td><td>R$ 20.415,00</td><td>R$ 30.000</td><td>❌ Não — caiu vs agosto (R$23.610,05)</td></tr>
+    <tr><td>🔥 Luana</td><td>—</td><td>—</td><td>Fora do mês (licença)</td></tr>
+  </table>
+
+  <div class="note">📍 <b>Breakeven de outubro: 287 alunos</b> (com a restrição de Wellhub 18-19h revertida — decisão em análise com Gustavo e Mateus). Com 274 hoje, <b>faltam 13 matrículas líquidas</b> pra fechar o mês no azul de novo.</div>
+</div>
+
+<div class="section">
+  <span class="tag">Prioridade</span>
+  <h2>Outubro é sobre consolidar — não perder o que setembro construiu</h2>
+  <p class="sub">Churn caiu, resultado virou positivo. Agora o jogo é: manter a retenção e somar 13 matrículas líquidas.</p>
+  <div class="cards">
+    <div class="card"><div class="num">1</div><h3>Manter a rotina fixa</h3><div class="desc">A divulgação semanal e as promoções de horário ocioso continuam — foi isso que segurou o churn em setembro, não é campanha de um mês só</div></div>
+    <div class="card red"><div class="num">2</div><h3>13 matrículas líquidas</h3><div class="desc">Número que o RE aponta como necessário pra repetir o breakeven em outubro — meta concreta, não abstrata</div></div>
+  </div>
+  <p class="note">💪 <b>Novidade do mês:</b> o Gustavo entra pra vender também — não é só direcionamento de cima, é competição de verdade dentro do próprio time.</p>
+</div>
+
+<div class="section">
+  <span class="tag">Visão Geral</span>
+  <h2>5 pilares do sistema — sem mudança</h2>
+  <p class="sub">As mesmas regras de sempre. Quanto mais metas batidas, maior o ganho.</p>
+  <div class="cards">
+    <div class="card"><div class="num">1</div><h3>Cota Diária</h3><div class="val">R$ 3.100/dia</div><div class="desc">2% vendas + 1% renovações no dia</div></div>
+    <div class="card"><div class="num">2</div><h3>Gatilho Diário</h3><div class="val">4 planos/dia</div><div class="desc">+R$10 por plano vendido</div></div>
+    <div class="card"><div class="num">3</div><h3>Cota Individual</h3><div class="val">personalizada</div><div class="desc">Bônus R$500 ao bater a cota</div></div>
+    <div class="card"><div class="num">4</div><h3>Cota do Mês</h3><div class="val">R$ 93k/time</div><div class="desc">Comissão 1,5% ou 2,5%</div></div>
+    <div class="card"><div class="num">5</div><h3>Meta Superação</h3><div class="val">R$ 128k/time</div><div class="desc">5% do excedente dividido pra todos</div></div>
+  </div>
+  <h3 class="subhead">Cota individual — outubro</h3>
+  <p class="sub">Sem régua automática fixa — decisão deliberada mês a mês, não fórmula. A base de cálculo da Emilly mudou de propósito este mês (ver nota).</p>
+  <div class="note">⚠️ <b>Luana segue fora</b> em outubro. Emilly e Julia continuam cobrindo a carteira dela.</div>
+  <table>
+    <tr><th>Vendedora</th><th>Cota setembro</th><th>Bateu?</th><th>Cota outubro</th><th>Como chegamos nesse número</th></tr>
+    <tr><td>🌟 Emilly</td><td>R$ 48.664,01</td><td>✅ Sim</td><td><b>R$ 51.097,21</b></td><td>+5% sobre a <b>cota</b> de setembro (não sobre o que ela vendeu) — crescer em cima do resultado puniria quem passou da meta e ensinaria a segurar depois de bater</td></tr>
+    <tr><td>⚡ Julia</td><td>R$ 30.000</td><td>❌ Não</td><td><b>R$ 30.000</b> (mantida)</td><td>Não bateu — cota não sobe nem desce</td></tr>
+    <tr><td>🔥 Luana</td><td>—</td><td>—</td><td><b>—</b></td><td>Fora do mês</td></tr>
+  </table>
+  <p class="sub">Wellhub de setembro (R$14.470, cai ~15/10) dividido entre Emilly e Julia: ~R$7.000 pra cada uma, já embutido nas metas acima. Soma das metas individuais (R$81.097) segue abaixo dos R$93k do time — meta aspiracional, não soma mecânica.</p>
+</div>
+
+<div class="section">
+  <span class="tag">Calendário</span>
+  <h2>Outubro em 3 momentos</h2>
+  <div class="calendar">
+    <div class="cal-weekdays"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+    <div class="cal-grid">
+      <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div>
+      <div class="cal-day cal-torneio"><span class="cal-num">1</span><span class="cal-tag">Véspera</span></div>
+      <div class="cal-day cal-torneio"><span class="cal-num">2</span><span class="cal-tag">Pratyc</span></div>
+      <div class="cal-day cal-torneio"><span class="cal-num">3</span><span class="cal-tag">Pratyc</span></div>
+
+      <div class="cal-day"><span class="cal-num">4</span></div>
+      <div class="cal-day"><span class="cal-num">5</span></div>
+      <div class="cal-day"><span class="cal-num">6</span></div>
+      <div class="cal-day"><span class="cal-num">7</span></div>
+      <div class="cal-day"><span class="cal-num">8</span></div>
+      <div class="cal-day"><span class="cal-num">9</span></div>
+      <div class="cal-day cal-crianca"><span class="cal-num">10</span><span class="cal-tag">Feriadão</span></div>
+
+      <div class="cal-day cal-crianca"><span class="cal-num">11</span><span class="cal-tag">Feriadão</span></div>
+      <div class="cal-day cal-crianca"><span class="cal-num">12</span><span class="cal-tag">Crianças</span></div>
+      <div class="cal-day"><span class="cal-num">13</span></div>
+      <div class="cal-day"><span class="cal-num">14</span></div>
+      <div class="cal-day"><span class="cal-num">15</span></div>
+      <div class="cal-day"><span class="cal-num">16</span></div>
+      <div class="cal-day"><span class="cal-num">17</span></div>
+
+      <div class="cal-day"><span class="cal-num">18</span></div>
+      <div class="cal-day"><span class="cal-num">19</span></div>
+      <div class="cal-day"><span class="cal-num">20</span></div>
+      <div class="cal-day"><span class="cal-num">21</span></div>
+      <div class="cal-day"><span class="cal-num">22</span></div>
+      <div class="cal-day"><span class="cal-num">23</span></div>
+      <div class="cal-day"><span class="cal-num">24</span></div>
+
+      <div class="cal-day"><span class="cal-num">25</span></div>
+      <div class="cal-day"><span class="cal-num">26</span></div>
+      <div class="cal-day"><span class="cal-num">27</span></div>
+      <div class="cal-day"><span class="cal-num">28</span></div>
+      <div class="cal-day"><span class="cal-num">29</span></div>
+      <div class="cal-day"><span class="cal-num">30</span></div>
+      <div class="cal-day cal-bt"><span class="cal-num">31</span><span class="cal-tag">BT Experience</span></div>
+    </div>
+    <div class="cal-legend">
+      <span><i class="cal-dot" style="background:#7c4fd1;"></i>Open Pratyc de Beach Tennis (Gabriel)</span>
+      <span><i class="cal-dot" style="background:#e0287a;"></i>Feriadão Dia das Crianças (10-12/10)</span>
+      <span><i class="cal-dot" style="background:#00b894;"></i>BT Experience (último sábado)</span>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head phase1">
+      <div class="p-label">Fase 1 · Torneio</div>
+      <div class="p-title">Open Pratyc de Beach Tennis (evento do Gabriel)</div>
+      <div class="p-dates">01 a 03 de outubro</div>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li><b>02 e 03/10 (sex-sáb)</b> — evento organizado pelo Gabriel (promotor), 16ª edição, condições já resolvidas com os sócios. 7 categorias, até 84 duplas, premiação de R$4.400 + brindes</li>
+        <li>Patrocínio e inscrições são do Gabriel — fora da cota das vendedoras. O trabalho do comercial é converter quem aparecer pra assistir/jogar em lead de matrícula</li>
+        <li>Abordagem ativa nos 2 dias — mesma lógica do torneio de agosto, não esperar a reta final pra converter quem já apareceu</li>
+        <li>Manter a rotina fixa semanal rodando em paralelo — é o que segura a retenção</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head phase2">
+      <div class="p-label">Fase 2 · Feriadão das Crianças</div>
+      <div class="p-title">Família na arena</div>
+      <div class="p-dates">04 a 17 de outubro</div>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li><b>10-12/10 (sáb-seg)</b> — feriadão de 3 dias do Dia das Crianças. Gancho natural: trazer o filho/sobrinho/afilhado pra jogar junto</li>
+        <li>Converter os leads do torneio (01-03/10) nessa janela — follow-up em até 48h já deve ter rodado, essa é a reta de fechamento</li>
+        <li>Rotina fixa semanal continua: divulgação de quarta, aluguel 2h quinta/sexta, day use no horário ocioso</li>
+      </ul>
+      <div class="quota-box">Foco: converter o funil do torneio antes que esfrie</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head phase3">
+      <div class="p-label">Fase 3 · Reta final</div>
+      <div class="p-title">Fechar as 13 matrículas, BT Experience</div>
+      <div class="p-dates">18 a 31 de outubro</div>
+    </div>
+    <div class="phase-body">
+      <ul>
+        <li><b>31/10</b> — BT Experience, próxima edição. Bônus do Programa Completo (ingresso grátis) ativo como argumento de fechamento o mês inteiro, não só na última semana</li>
+        <li>Checagem de meio de mês: quantas das 13 matrículas líquidas já fecharam — ajustar ritmo se precisar</li>
+        <li>Sprint final da última semana, mesma lógica dos meses anteriores: urgência real, sem desespero</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="tag">Estratégia de Planos</span>
+  <h2>Cada plano tem um papel — sem mudança</h2>
+  <div class="cards" style="margin-top:24px;">
+    <div class="card" style="border-color:#2d5a3a; background:#0f2415;">
+      <div class="num" style="background:var(--green);">★</div>
+      <h3 style="color:var(--green);">Experience — o plano principal</h3>
+      <div class="val" style="font-size:20px;">R$ 299,90</div>
+      <div class="desc" style="margin-top:8px;">É aqui que a arena cresce. <b style="color:var(--green);">Esse é o plano que você empurra.</b></div>
+    </div>
+    <div class="card">
+      <div class="num">→</div>
+      <h3>Light — porta de entrada</h3>
+      <div class="val" style="font-size:20px;">R$ 229,90</div>
+      <div class="desc" style="margin-top:8px;">Só entra se houver objeção de preço — sempre com promessa de upgrade.</div>
+    </div>
+    <div class="card" style="opacity:0.7;">
+      <div class="num">↑</div>
+      <h3>Black e Infinity — ancoragem</h3>
+      <div class="val" style="font-size:20px;">R$ 369 · R$ 429</div>
+      <div class="desc" style="margin-top:8px;">Fazem o Experience parecer acessível. Não force — só se o aluno pedir.</div>
+    </div>
+  </div>
+  <div class="note">💳 <b>Regra de desconto vigente:</b> 10% OFF pra quem paga via Pix antecipado. Planos legado (pré-reajuste) — só no anual. Planos da tabela 2026 — mensal e anual.</div>
+</div>
+
+<div class="footer">
+  <p class="sub">Setembro provou que dá certo. Outubro é sobre repetir.</p>
+  <h2>13 MATRÍCULAS. <span class="gold">O RESTO JÁ ESTÁ FUNCIONANDO.</span></h2>
+  <p class="sub">Rotina fixa mantida. Torneio convertido em lead. Breakeven defendido.</p>
+  <br>
+  <p class="confidential">POINT 43 BEACH TENNIS · point43.com.br · CONFIDENCIAL</p>
+</div>
+
+</body>
+</html>
