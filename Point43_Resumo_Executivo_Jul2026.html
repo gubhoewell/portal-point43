@@ -324,7 +324,7 @@
   <canvas id="chart" width="700" height="215" style="width:100%;height:auto;display:block;border:1px solid #eee;"></canvas>
   <div style="display:flex;gap:16px;margin-top:3px;flex-wrap:wrap;">
     <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:8px;background:#1565C0;"></span> Receita mensal</span>
-    <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:8px;background:#1565C0;"></span> Jul e Ago reais ✅</span>
+    <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:8px;background:#1565C0;"></span> Jul, Ago e Set reais ✅</span>
     <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:#C62828;margin:3px 0;"></span> Custo médio real ~R$78k</span>
     <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:#E65100;margin:3px 0;"></span> Cota R$93.000</span>
     <span class="nota" style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:#F5C518;margin:3px 0;"></span> Alunos ativos →</span>
@@ -347,7 +347,7 @@
   const cw = W - pad.left - pad.right;
   const ch = H - pad.top - pad.bottom;
 
-  const yMin = 55000, yMax = 100000;
+  const yMin = 55000, yMax = 103000;
   function yR(v) { return pad.top + ch - (v - yMin) / (yMax - yMin) * ch; }
 
   const aMin = 220, aMax = 300;
