@@ -74,11 +74,17 @@
   .cal-num{ font-size:12px; font-weight:700; color:var(--muted); }
   .cal-tag{ font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; line-height:1.2; padding:2px 4px; border-radius:4px; text-align:center; }
   .cal-torneio{ background:#7c4fd1; color:#fff; }
-  .cal-crianca{ background:#e0287a; color:#1a0812; }
+  .cal-crianca{ background:#c99200; color:#1a1200; }
   .cal-bt{ background:#00b894; color:#00251a; }
+  .cal-fabrica{ background:#1565c0; color:#fff; }
+  .cal-rosa{ background:#e0287a; color:#2a0f1c; }
+  .cal-feriado{ background:#555; color:#fff; }
   .cal-day.cal-torneio{ border-color:#7c4fd1; border-width:2px; }
-  .cal-day.cal-crianca{ border-color:#e0287a; border-width:2px; }
+  .cal-day.cal-crianca{ border-color:#c99200; border-width:2px; }
   .cal-day.cal-bt{ border-color:#00b894; border-width:2px; }
+  .cal-day.cal-fabrica{ border-color:#1565c0; border-width:2px; }
+  .cal-day.cal-rosa{ border-color:#e0287a; border-width:2px; }
+  .cal-day.cal-livre{ border:2px dashed var(--gold); }
   .cal-legend{ display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:16px; font-size:12px; color:#ddd; }
   .cal-legend span{ display:inline-flex; align-items:center; gap:6px; }
   .cal-dot{ width:10px; height:10px; border-radius:3px; display:inline-block; }
@@ -89,7 +95,7 @@
 <div class="section" style="padding-top:90px; padding-bottom:90px;">
   <span class="tag">Apresentação Interna — Time Comercial</span>
   <h1>ARQUITETURA COMERCIAL<span class="accent">&amp; PLANO DE OUTUBRO</span></h1>
-  <p class="sub">Sistema de Metas · Open Pratyc de Beach Tennis (Gabriel) · Dia das Crianças · BT Experience · Outubro 2026</p>
+  <p class="sub">Sistema de Metas · Open Pratyc · BT Experience InPot · Dia das Crianças · Imersão Fábrica de Professores · Liga Rosa · BT Experience · Outubro 2026</p>
   <div class="cards">
     <div class="card green"><div class="val">Breakeven ✅</div><div class="desc">Setembro fechou +R$364 — primeiro mês positivo desde a virada</div></div>
     <div class="card red"><div class="val">+13 matrículas</div><div class="desc">Meta líquida do mês — número que decide se outubro também fecha no azul</div></div>
@@ -133,7 +139,6 @@
     <div class="card"><div class="num">1</div><h3>Manter a rotina fixa</h3><div class="desc">A divulgação semanal e as promoções de horário ocioso continuam — foi isso que segurou o churn em setembro, não é campanha de um mês só</div></div>
     <div class="card red"><div class="num">2</div><h3>13 matrículas líquidas</h3><div class="desc">Número que o RE aponta como necessário pra repetir o breakeven em outubro — meta concreta, não abstrata</div></div>
   </div>
-  <p class="note">💪 <b>Novidade do mês:</b> o Gustavo entra pra vender também — não é só direcionamento de cima, é competição de verdade dentro do próprio time.</p>
 </div>
 
 <div class="section">
@@ -176,25 +181,25 @@
       <div class="cal-day"><span class="cal-num">7</span></div>
       <div class="cal-day"><span class="cal-num">8</span></div>
       <div class="cal-day"><span class="cal-num">9</span></div>
-      <div class="cal-day cal-crianca"><span class="cal-num">10</span><span class="cal-tag">Feriadão</span></div>
+      <div class="cal-day cal-bt"><span class="cal-num">10</span><span class="cal-tag">BT Exp. InPot</span></div>
 
-      <div class="cal-day cal-crianca"><span class="cal-num">11</span><span class="cal-tag">Feriadão</span></div>
-      <div class="cal-day cal-crianca"><span class="cal-num">12</span><span class="cal-tag">Crianças</span></div>
+      <div class="cal-day cal-crianca"><span class="cal-num">11</span><span class="cal-tag">Dia Crianças</span></div>
+      <div class="cal-day cal-feriado"><span class="cal-num">12</span><span class="cal-tag">Feriado</span></div>
       <div class="cal-day"><span class="cal-num">13</span></div>
       <div class="cal-day"><span class="cal-num">14</span></div>
       <div class="cal-day"><span class="cal-num">15</span></div>
       <div class="cal-day"><span class="cal-num">16</span></div>
-      <div class="cal-day"><span class="cal-num">17</span></div>
+      <div class="cal-day cal-fabrica"><span class="cal-num">17</span><span class="cal-tag">Fábrica Prof.</span></div>
 
-      <div class="cal-day"><span class="cal-num">18</span></div>
+      <div class="cal-day cal-fabrica"><span class="cal-num">18</span><span class="cal-tag">Fábrica Prof.</span></div>
       <div class="cal-day"><span class="cal-num">19</span></div>
       <div class="cal-day"><span class="cal-num">20</span></div>
       <div class="cal-day"><span class="cal-num">21</span></div>
       <div class="cal-day"><span class="cal-num">22</span></div>
       <div class="cal-day"><span class="cal-num">23</span></div>
-      <div class="cal-day"><span class="cal-num">24</span></div>
+      <div class="cal-day cal-rosa"><span class="cal-num">24</span><span class="cal-tag">Liga Rosa</span></div>
 
-      <div class="cal-day"><span class="cal-num">25</span></div>
+      <div class="cal-day cal-livre"><span class="cal-num">25</span></div>
       <div class="cal-day"><span class="cal-num">26</span></div>
       <div class="cal-day"><span class="cal-num">27</span></div>
       <div class="cal-day"><span class="cal-num">28</span></div>
@@ -204,9 +209,13 @@
     </div>
     <div class="cal-legend">
       <span><i class="cal-dot" style="background:#7c4fd1;"></i>Open Pratyc de Beach Tennis (Gabriel)</span>
-      <span><i class="cal-dot" style="background:#e0287a;"></i>Feriadão Dia das Crianças (10-12/10)</span>
-      <span><i class="cal-dot" style="background:#00b894;"></i>BT Experience (último sábado)</span>
+      <span><i class="cal-dot" style="background:#00b894;"></i>BT Experience (InPot dia 10, edição normal dia 31)</span>
+      <span><i class="cal-dot" style="background:#c99200;"></i>Dia das Crianças (11/10, não no feriado)</span>
+      <span><i class="cal-dot" style="background:#1565c0;"></i>Imersão Fábrica de Professores</span>
+      <span><i class="cal-dot" style="background:#e0287a;"></i>Liga Rosa (Outubro Rosa)</span>
+      <span><i class="cal-dot" style="background:#555;"></i>Feriado (Nossa Senhora Aparecida)</span>
     </div>
+    <p class="sub" style="margin-top:14px;">🎀 A marca fica rosa o mês inteiro (Outubro Rosa) — logo com detalhe rosa no Instagram e WhatsApp oficial.</p>
   </div>
 
   <div class="phase">
@@ -227,14 +236,17 @@
 
   <div class="phase">
     <div class="phase-head phase2">
-      <div class="p-label">Fase 2 · Feriadão das Crianças</div>
-      <div class="p-title">Família na arena</div>
-      <div class="p-dates">04 a 17 de outubro</div>
+      <div class="p-label">Fase 2 · Semana de eventos</div>
+      <div class="p-title">BT Experience InPot, Dia das Crianças, Fábrica de Professores</div>
+      <div class="p-dates">04 a 18 de outubro</div>
     </div>
     <div class="phase-body">
       <ul>
-        <li><b>10-12/10 (sáb-seg)</b> — feriadão de 3 dias do Dia das Crianças. Gancho natural: trazer o filho/sobrinho/afilhado pra jogar junto</li>
         <li>Converter os leads do torneio (01-03/10) nessa janela — follow-up em até 48h já deve ter rodado, essa é a reta de fechamento</li>
+        <li><b>10/10 (sáb)</b> — BT Experience edição especial, parceria InPot. Fora da régua mensal normal — conversão de quem for convidado</li>
+        <li><b>11/10 (dom)</b> — Dia das Crianças: Mateus organiza com o Victor (Orla Palhano), formato ainda sendo fechado. Porta de entrada de pais que ainda não são alunos — sem tom de venda no dia, efeito comercial vem no follow-up</li>
+        <li><b>12/10 (seg)</b> — feriado (Nossa Senhora Aparecida), sem campanha específica</li>
+        <li><b>17-18/10 (sáb-dom)</b> — Imersão Fábrica de Professores: evento de venda do programa de formação, público misto (professores de fora + equipe interna). Comercial de plano não é o foco aqui — é outro produto, outro funil</li>
         <li>Rotina fixa semanal continua: divulgação de quarta, aluguel 2h quinta/sexta, day use no horário ocioso</li>
       </ul>
       <div class="quota-box">Foco: converter o funil do torneio antes que esfrie</div>
@@ -243,13 +255,15 @@
 
   <div class="phase">
     <div class="phase-head phase3">
-      <div class="p-label">Fase 3 · Reta final</div>
-      <div class="p-title">Fechar as 13 matrículas, BT Experience</div>
-      <div class="p-dates">18 a 31 de outubro</div>
+      <div class="p-label">Fase 3 · Rosa + reta final</div>
+      <div class="p-title">Liga Rosa, fechar as 13 matrículas, BT Experience</div>
+      <div class="p-dates">19 a 31 de outubro</div>
     </div>
     <div class="phase-body">
       <ul>
-        <li><b>31/10</b> — BT Experience, próxima edição. Bônus do Programa Completo (ingresso grátis) ativo como argumento de fechamento o mês inteiro, não só na última semana</li>
+        <li><b>24/10 (sáb)</b> — Liga Rosa (Outubro Rosa): torneio interno informal, sem arrecadação nem parceria externa. Comercial não vende aqui — é construção de comunidade/marca, mas é oportunidade de relacionamento com a base</li>
+        <li><b>25/10 (dom)</b> — dia livre no calendário, sem campanha definida</li>
+        <li><b>31/10</b> — BT Experience, edição mensal normal. Bônus do Programa Completo (ingresso grátis) ativo como argumento de fechamento o mês inteiro, não só na última semana</li>
         <li>Checagem de meio de mês: quantas das 13 matrículas líquidas já fecharam — ajustar ritmo se precisar</li>
         <li>Sprint final da última semana, mesma lógica dos meses anteriores: urgência real, sem desespero</li>
       </ul>
