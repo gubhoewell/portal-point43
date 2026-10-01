@@ -42,6 +42,34 @@
   .card .val{ font-size:22px; font-weight:800; }
   .footer{ text-align:center; padding:56px 24px; }
   .confidential{ color:var(--gold); font-size:12px; letter-spacing:1px; }
+
+  .livre-card{ background:var(--panel); border:2px dashed var(--gold); border-radius:10px; padding:20px; text-align:center; }
+  .livre-card .dia{ font-size:28px; font-weight:800; color:var(--gold); }
+  .livre-card .tag-livre{ display:inline-block; margin-top:8px; font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:20px; padding:3px 10px; }
+  .livre-card .desc{ font-size:12px; color:var(--muted); margin-top:10px; }
+
+  .calendar{ margin-top:24px; margin-bottom:12px; }
+  .cal-weekdays{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-bottom:6px; }
+  .cal-weekdays span{ text-align:center; font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); }
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
+  .cal-day{ aspect-ratio:1; background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:6px; display:flex; flex-direction:column; justify-content:space-between; min-height:58px; }
+  .cal-day.empty{ background:transparent; border:none; }
+  .cal-num{ font-size:12px; font-weight:700; color:var(--muted); }
+  .cal-tag{ font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; line-height:1.2; padding:2px 4px; border-radius:4px; text-align:center; }
+  .cal-torneio{ background:#7c4fd1; color:#fff; }
+  .cal-bt{ background:#00b894; color:#00251a; }
+  .cal-crianca{ background:#c99200; color:#1a1200; }
+  .cal-rosa{ background:var(--pink); color:#2a0f1c; }
+  .cal-feriado{ background:#555; color:#fff; }
+  .cal-day.cal-torneio{ border-color:#7c4fd1; border-width:2px; }
+  .cal-day.cal-bt{ border-color:#00b894; border-width:2px; }
+  .cal-day.cal-crianca{ border-color:#c99200; border-width:2px; }
+  .cal-day.cal-rosa{ border-color:var(--pink); border-width:2px; }
+  .cal-day.cal-livre{ border:2px dashed var(--gold); }
+  .cal-livre-tag{ font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; padding:2px 4px; border-radius:4px; text-align:center; color:var(--gold); border:1px solid var(--gold); }
+  .cal-legend{ display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:16px; font-size:12px; color:#ddd; }
+  .cal-legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .cal-dot{ width:10px; height:10px; border-radius:3px; display:inline-block; }
 </style>
 </head>
 <body>
@@ -143,7 +171,17 @@
     <div class="field"><h4>Tom</h4><p>Acolhedor, sem apelo emocional pesado — movimento e cuidado, não doença.</p></div>
     <div class="field"><h4>Não fazer</h4><p>Não prometer arrecadação ou parceria que não existe. Não usar linguagem pesada/médica.</p></div>
     <div class="tags-row"><span class="pill">Instagram Feed</span><span class="pill">Stories</span><span class="pill">Grupos de WhatsApp</span></div>
-    <div class="important">📅 <b>Dias 18, 24 e 25/10 seguem livres</b> na agenda — nenhuma campanha ocupa essas datas ainda. Disponíveis pra qualquer outra ativação ou evento que surgir ao longo do mês.</div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="tag" style="background:var(--panel2); border:1px solid var(--gold); color:var(--gold);">Agenda aberta</span>
+  <h2>3 dias livres no calendário</h2>
+  <p class="sub">Nenhuma campanha ocupa essas datas ainda — disponíveis pra qualquer ativação ou evento que surgir ao longo do mês.</p>
+  <div class="cards">
+    <div class="livre-card"><div class="dia">18/10</div><div class="desc">Domingo</div><span class="tag-livre">Livre</span></div>
+    <div class="livre-card"><div class="dia">24/10</div><div class="desc">Sábado</div><span class="tag-livre">Livre</span></div>
+    <div class="livre-card"><div class="dia">25/10</div><div class="desc">Domingo</div><span class="tag-livre">Livre</span></div>
   </div>
 </div>
 
@@ -172,6 +210,62 @@
   <span class="tag" style="background:var(--panel2); border:1px solid var(--gold); color:var(--gold);">Narrativa do mês</span>
   <h2>Outubro é ritmo de evento — a rotina fixa segura a casa</h2>
   <p class="sub">5 momentos fortes, mas a rotina semanal de setembro (quarta FDS, quinta/sexta aluguel, horário ocioso day use) continua rodando por baixo de tudo — é ela que não deixa a energia cair entre um evento e outro.</p>
+</div>
+
+<div class="section">
+  <span class="tag" style="background:var(--panel2); border:1px solid var(--gold); color:var(--gold);">Visão geral</span>
+  <h2>Calendário de outubro — mês inteiro</h2>
+  <p class="sub">Tudo que já está marcado, e o que ainda está em aberto, num só lugar.</p>
+
+  <div class="calendar">
+    <div class="cal-weekdays"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+    <div class="cal-grid">
+      <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div>
+      <div class="cal-day"><span class="cal-num">1</span></div>
+      <div class="cal-day cal-torneio"><span class="cal-num">2</span><span class="cal-tag">Open Pratyc</span></div>
+      <div class="cal-day cal-torneio"><span class="cal-num">3</span><span class="cal-tag">Open Pratyc</span></div>
+
+      <div class="cal-day"><span class="cal-num">4</span></div>
+      <div class="cal-day"><span class="cal-num">5</span></div>
+      <div class="cal-day"><span class="cal-num">6</span></div>
+      <div class="cal-day"><span class="cal-num">7</span></div>
+      <div class="cal-day"><span class="cal-num">8</span></div>
+      <div class="cal-day"><span class="cal-num">9</span></div>
+      <div class="cal-day cal-bt"><span class="cal-num">10</span><span class="cal-tag">BT Exp. InPot</span></div>
+
+      <div class="cal-day cal-crianca"><span class="cal-num">11</span><span class="cal-tag">Dia Crianças</span></div>
+      <div class="cal-day cal-feriado"><span class="cal-num">12</span><span class="cal-tag">Feriado</span></div>
+      <div class="cal-day"><span class="cal-num">13</span></div>
+      <div class="cal-day"><span class="cal-num">14</span></div>
+      <div class="cal-day"><span class="cal-num">15</span></div>
+      <div class="cal-day"><span class="cal-num">16</span></div>
+      <div class="cal-day cal-rosa"><span class="cal-num">17</span><span class="cal-tag">Liga Rosa</span></div>
+
+      <div class="cal-day cal-livre"><span class="cal-num">18</span><span class="cal-livre-tag">Livre</span></div>
+      <div class="cal-day"><span class="cal-num">19</span></div>
+      <div class="cal-day"><span class="cal-num">20</span></div>
+      <div class="cal-day"><span class="cal-num">21</span></div>
+      <div class="cal-day"><span class="cal-num">22</span></div>
+      <div class="cal-day"><span class="cal-num">23</span></div>
+      <div class="cal-day cal-livre"><span class="cal-num">24</span><span class="cal-livre-tag">Livre</span></div>
+
+      <div class="cal-day cal-livre"><span class="cal-num">25</span><span class="cal-livre-tag">Livre</span></div>
+      <div class="cal-day"><span class="cal-num">26</span></div>
+      <div class="cal-day"><span class="cal-num">27</span></div>
+      <div class="cal-day"><span class="cal-num">28</span></div>
+      <div class="cal-day"><span class="cal-num">29</span></div>
+      <div class="cal-day"><span class="cal-num">30</span></div>
+      <div class="cal-day cal-bt"><span class="cal-num">31</span><span class="cal-tag">BT Experience</span></div>
+    </div>
+    <div class="cal-legend">
+      <span><i class="cal-dot" style="background:#7c4fd1;"></i>Open Pratyc de Beach Tennis</span>
+      <span><i class="cal-dot" style="background:#00b894;"></i>BT Experience</span>
+      <span><i class="cal-dot" style="background:#c99200;"></i>Dia das Crianças</span>
+      <span><i class="cal-dot" style="background:#e0287a;"></i>Liga Rosa (Outubro Rosa)</span>
+      <span><i class="cal-dot" style="background:#555;"></i>Feriado (Nossa Senhora Aparecida)</span>
+      <span><i class="cal-dot" style="background:transparent; border:2px dashed var(--gold);"></i>Dia livre — aberto pra ativação</span>
+    </div>
+  </div>
 </div>
 
 <div class="footer">
