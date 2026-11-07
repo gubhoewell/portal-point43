@@ -54,6 +54,19 @@
     padding: 4px 14px;
     width: fit-content;
   }
+  .docs { width:100%; max-width:900px; margin-top:3rem; }
+  .docs h2 { font-size:14px; letter-spacing:4px; color:#555; text-transform:uppercase; margin-bottom:16px; text-align:center; }
+  .docs-box { background:#111; border:1px solid #1e1e1e; border-radius:18px; padding:28px 24px; }
+  .docs-box p { color:#777; font-size:14px; line-height:1.6; text-align:center; margin-bottom:16px; }
+  .login { display:flex; flex-direction:column; gap:10px; max-width:340px; margin:0 auto; }
+  .login input { background:#0a0a0a; border:1px solid #2a2a2a; border-radius:10px; padding:12px 14px; color:#f0f0f0; font-size:16px; }
+  .login button { background:#c9a84c; color:#000; border:0; border-radius:10px; padding:12px; font-size:16px; font-weight:700; cursor:pointer; }
+  .login-msg { color:#e07a5f; font-size:13px; min-height:16px; text-align:center; }
+  .login-link { color:#777; font-size:13px; text-align:center; }
+  .docs-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:13px; color:#777; }
+  .docs-top a { color:#c9a84c; cursor:pointer; }
+  .docs .grid { margin:0; max-width:none; }
+  .docs .card { padding:30px 28px; }
   .footer { margin-top: 3rem; font-size: 13px; color: #333; }
 </style>
 </head>
@@ -110,6 +123,45 @@
   </a>
 
 </div>
+
+<div class="docs">
+  <h2>Documentos do time</h2>
+  <div class="docs-box" id="docsBox"><p>Carregando…</p></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="central.js"></script>
+<script>
+const box = document.getElementById('docsBox');
+const esc = t => String(t||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function telaLogin() {
+  box.innerHTML = '<p>Planos, briefings e materiais internos. Entre com seu e-mail e senha.</p>';
+  box.appendChild(formLogin(() => {}));
+}
+async function telaDocs() {
+  const m = await membroAtual();
+  if (!m) {
+    box.innerHTML = '<p>Seu login não tem acesso a esta área. Fale com o Gustavo.</p><div class="docs-top" style="justify-content:center"><a id="sair">Sair</a></div>';
+    box.querySelector('#sair').onclick = () => AUTH.signOut(); return;
+  }
+  let q = FS.collection('docs_meta');
+  if (!m.gestor) q = q.where('nivel', '==', 'time');
+  let docs = [];
+  try { docs = (await q.get()).docs.map(d => ({ id: d.id, ...d.data() })); }
+  catch (e) { box.innerHTML = '<p>Não foi possível carregar os documentos. Tente recarregar a página.</p>'; return; }
+  docs.sort((a, b) => (a.ordem || 99) - (b.ordem || 99));
+  box.innerHTML = '<div class="docs-top"><span>Olá, ' + esc(m.nome) + '</span><a id="sair">Sair</a></div>' +
+    (docs.length ? '<div class="grid">' + docs.map(d =>
+      '<a class="card" href="doc.html?id=' + encodeURIComponent(d.id) + '">' +
+      '<div class="card-icon">' + esc(d.icone) + '</div><div class="card-titulo">' + esc(d.titulo) + '</div>' +
+      '<div class="card-desc">' + esc(d.desc) + '</div><div class="card-tag">' + esc(d.tag) + '</div></a>').join('') + '</div>'
+      : '<p>Nenhum documento publicado.</p>');
+  box.querySelector('#sair').onclick = () => AUTH.signOut();
+}
+AUTH.onAuthStateChanged(u => u ? telaDocs() : telaLogin());
+</script>
 
 <div class="footer">Point 43 © 2026</div>
 
